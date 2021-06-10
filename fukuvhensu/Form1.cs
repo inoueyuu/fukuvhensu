@@ -12,8 +12,8 @@ namespace fukuvhensu
 {
     public partial class Form1 : Form
     {
-        int vx = 0;
-        int vy = 0;
+        int vx = 10;
+        int vy = 10;
 
         public Form1()
         {
@@ -35,20 +35,19 @@ namespace fukuvhensu
             //textBox1.Text = "0";
             //textBox2.Text = "-1";
             vx = 0;
-            vy = -1;
+            vy = -10;
 
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             //textBox1.Text = "-1";
             //textBox2.Text = "0";
-            vx = -1;
+            vx = -10;
             vy = 0;
 
         }
@@ -57,7 +56,7 @@ namespace fukuvhensu
         {
             //textBox1.Text = "1";
             //textBox2.Text = "0";
-            vx = 1;
+            vx = 10;
             vy = 0;
         }
 
@@ -67,6 +66,15 @@ namespace fukuvhensu
             //label1.Left += int.Parse(textBox1.Text);
             label1.Top += vy;
             label1.Left += vx;
+
+            if (label1.Left < 0)
+                vx = Math.Abs(vx);
+            if (label1.Top < 0)
+                vy = Math.Abs(vy);
+            if (label1.Right> ClientSize.Width )
+                vx = -Math.Abs(vx);
+            if (label1.Bottom > ClientSize.Height)
+                vy = -Math.Abs(vy);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -74,7 +82,7 @@ namespace fukuvhensu
             //textBox1.Text = "0";
             //textBox2.Text = "1";
             vx = 0;
-            vy = 1;
+            vy = 10;
         }
 
         private void label1_Click(object sender, EventArgs e)

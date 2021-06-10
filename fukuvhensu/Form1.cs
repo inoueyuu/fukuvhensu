@@ -65,8 +65,8 @@ namespace fukuvhensu
         {
             //label1.Top += int.Parse(textBox2.Text);
             //label1.Left += int.Parse(textBox1.Text);
-            label1.Top = vy;
-            label1.Left = vx;
+            label1.Top += vy;
+            label1.Left += vx;
         }
 
         private void button4_Click(object sender, EventArgs e)
